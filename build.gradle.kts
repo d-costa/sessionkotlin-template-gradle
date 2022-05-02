@@ -11,7 +11,7 @@ subprojects{
             if (envFile.exists())
                 props.load(FileInputStream(envFile))
 
-            name = "GitHubPackages"
+            name = "SessionKotlin-GithubPackages"
             url = uri("https://maven.pkg.github.com/d-costa/sessionkotlin")
             credentials {
                 username = props.getProperty("USERNAME") ?: System.getenv("USERNAME")
