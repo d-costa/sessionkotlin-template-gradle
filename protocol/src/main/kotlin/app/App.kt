@@ -9,6 +9,6 @@ fun main() {
 
     globalProtocol("ExampleProtocol") {
         send<Int>(a, b, "val1")
-        send<Int>(b, a, "val2")
+        send<Int>(b, a, "val2", "val2 > val1")
     }
 }

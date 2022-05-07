@@ -2,8 +2,8 @@ package app
 
 import Alice
 import Bob
-import ExampleProtocol_Alice_1
-import ExampleProtocol_Bob_1
+import ExampleProtocolAlice1
+import ExampleProtocolBob1
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.david.sessionkotlin.backend.SKBuffer
@@ -20,7 +20,7 @@ fun main() {
 
                 val buf = SKBuffer<Int>()
 
-                ExampleProtocol_Alice_1(e)
+                ExampleProtocolAlice1(e)
                     .sendToBob(1)
                     .receiveFromBob(buf)
 
@@ -35,7 +35,7 @@ fun main() {
 
                 val buf = SKBuffer<Int>()
 
-                ExampleProtocol_Bob_1(e)
+                ExampleProtocolBob1(e)
                     .receiveFromAlice(buf)
                     .sendToAlice(buf.value + 1)
             }
