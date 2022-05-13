@@ -4,11 +4,11 @@ import Alice
 import Bob
 import ExampleProtocolAlice1
 import ExampleProtocolBob1
+import com.github.d_costa.sessionkotlin.backend.SKBuffer
+import com.github.d_costa.sessionkotlin.backend.channel.SKChannel
+import com.github.d_costa.sessionkotlin.backend.endpoint.SKMPEndpoint
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import org.david.sessionkotlin.backend.SKBuffer
-import org.david.sessionkotlin.backend.SKMPEndpoint
-import org.david.sessionkotlin.backend.channel.SKChannel
 
 fun main() {
     runBlocking {
@@ -23,8 +23,8 @@ fun main() {
                 ExampleProtocolAlice1(e)
                     .sendToBob(1)
                     .receiveFromBob(buf)
-
-                println("Final value: ${buf.value}")
+                    .also { println("Alice received ${buf.value} from Bob") }
+                    .sendToBob("Hello")
             }
         }
 
@@ -34,10 +34,14 @@ fun main() {
                 e.connect(Alice, chan)
 
                 val buf = SKBuffer<Int>()
+                val strBuf = SKBuffer<String>()
 
                 ExampleProtocolBob1(e)
                     .receiveFromAlice(buf)
-                    .sendToAlice(buf.value + 1)
+                    .also { println("Bob received ${buf.value} from Alice") }
+                    .sendToAlice(buf.value * 2)
+                    .receiveFromAlice(strBuf)
+                    .also { println("Bob received ${strBuf.value} from Alice") }
             }
         }
     }

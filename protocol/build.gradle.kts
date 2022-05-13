@@ -1,10 +1,11 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.5.31"
+    kotlin("jvm")
     application
+    id("com.github.d-costa.sessionkotlin.plugin") version "0.1"
 }
 
 dependencies {
-    api("org.david:sessionkotlin-lib:0.0.2")
+    api("com.github.d-costa:sessionkotlin-lib:0.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
 }
 
