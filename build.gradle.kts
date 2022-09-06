@@ -4,7 +4,7 @@ import java.io.FileInputStream
 plugins {
     kotlin("jvm") version "1.6.20" apply false
     // https://github.com/d-costa/sessionkotlin/packages/1416283
-    id("com.github.d-costa.sessionkotlin.plugin") version "2.0.1" apply false
+    id("com.github.d-costa.sessionkotlin.plugin") version "2.0.2" apply false
 }
 
 subprojects{
