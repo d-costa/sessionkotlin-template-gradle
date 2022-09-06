@@ -1,12 +1,14 @@
 plugins {
     kotlin("jvm")
     application
-    id("com.github.d-costa.sessionkotlin.plugin") version "0.1.1"
+    id("com.github.d-costa.sessionkotlin.plugin")
 }
+val sessionKotlinVersion: String by project
+val coroutinesVersion: String by project
 
 dependencies {
-    api("com.github.d-costa:sessionkotlin-lib:0.1.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+    api("com.github.d-costa:sessionkotlin-lib:$sessionKotlinVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 }
 
 application {
