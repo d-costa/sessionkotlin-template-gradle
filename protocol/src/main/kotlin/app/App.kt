@@ -1,11 +1,7 @@
 package app
 
-import com.github.d_costa.sessionkotlin.api.SKGenRole
-import com.github.d_costa.sessionkotlin.dsl.GlobalProtocol
-import com.github.d_costa.sessionkotlin.dsl.SKRole
-import com.github.d_costa.sessionkotlin.dsl.globalProtocol
-import java.time.LocalDate
-import java.util.*
+import com.github.sessionkotlin.lib.dsl.SKRole
+import com.github.sessionkotlin.lib.dsl.globalProtocol
 
 fun main() {
     val a = SKRole("Alice")

@@ -1,13 +1,10 @@
 package app
 
 
-import com.github.d_costa.sessionkotlin.backend.SKBuffer
-import com.github.d_costa.sessionkotlin.backend.channel.SKChannel
-import com.github.d_costa.sessionkotlin.backend.endpoint.ConnectionEnd
-import com.github.d_costa.sessionkotlin.backend.endpoint.SKMPEndpoint
-import kotlinx.coroutines.Dispatchers
+import com.github.sessionkotlin.lib.backend.SKBuffer
+import com.github.sessionkotlin.lib.backend.channel.SKChannel
+import com.github.sessionkotlin.lib.backend.endpoint.SKMPEndpoint
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import protocol.Alice
@@ -15,7 +12,6 @@ import protocol.Bob
 import protocol.Charlie
 import protocol.callbacks.*
 import protocol.fluent.*
-import kotlin.random.Random
 
 
 fun main() {

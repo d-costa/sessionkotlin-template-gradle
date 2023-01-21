@@ -8,7 +8,7 @@ pluginManagement {
                 props.load(java.io.FileInputStream(envFile))
 
             name = "GithubPackages"
-            url = uri("https://maven.pkg.github.com/d-costa/sessionkotlin")
+            url = uri("https://maven.pkg.github.com/sessionkotlin/sessionkotlin")
             credentials {
                 username = props.getProperty("USERNAME") ?: System.getenv("USERNAME")
                 password = props.getProperty("TOKEN") ?: System.getenv("TOKEN")
